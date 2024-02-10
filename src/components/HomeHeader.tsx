@@ -68,6 +68,7 @@ function HomeHeader({ username, changeName }: HomeHeaderProps) {
                 <a>Hapus Data</a>
               </label>
             </li>
+            <li className="mx-4 select-none opacity-70 my-1">V.1.0.2</li>
           </ul>
         </div>
       </div>
