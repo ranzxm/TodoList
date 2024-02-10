@@ -29,13 +29,15 @@ export function BadWordCensoring(word: string): string {
     "ngnt0t",
     "ngntot",
     "biadab",
+    "anjing",
   ];
   const kata = {
     lama: word,
     baru: "",
   };
   badWordList.map((item) => {
-    kata.baru = kata.lama.toLowerCase().replace(item, "*****");
+    const regEx = new RegExp(item, "i");
+    kata.baru = kata.lama.replace(regEx, "*****");
     kata.lama = kata.baru;
   });
   return kata.baru;
