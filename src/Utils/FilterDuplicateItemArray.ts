@@ -5,6 +5,6 @@ export function filterDuplicateArrayItem(cookie: User | undefined) {
     todo.map((item) => {
       arrayList.push(item.createdAt);
     });
-    return [...new Set(arrayList)];
+    return [...new Set(arrayList.reverse())];
   }
 }
