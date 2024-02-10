@@ -20,7 +20,7 @@ function ModalEditTodo({ id, todo, updateTodoFunc }: ModalEditTodoProps) {
             method="dialog"
             onSubmit={(e) => {
               e.preventDefault();
-              const dialog = document.getElementById(`checkbox${id}`);
+              const dialog = document.getElementById(`checkbox${id}`) as HTMLInputElement;
               if (dialog !== null) {
                 dialog.checked = false;
               }

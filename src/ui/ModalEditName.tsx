@@ -25,7 +25,7 @@ function ModalEditName({ changeNameFunc }: ModalEditName) {
             onSubmit={(e) => {
               e.preventDefault();
               changeNameFunc(newName);
-              const dialog = document.getElementById("changename__38773");
+              const dialog = document.getElementById("changename__38773") as HTMLInputElement;
               if (dialog !== null) {
                 dialog.checked = false;
               }

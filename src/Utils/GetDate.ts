@@ -1,24 +1,26 @@
 export function getDate() {
-  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday"];
+  // const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday"];
   const hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"];
 
-  // const months = [
-  //   "January",
-  //   "February",
-  //   "Maret",
-  //   "April",
-  //   "June",
-  //   "July",
-  //   "August",
-  //   "September",
-  //   "October",
-  //   "November",
-  //   "December",
-  // ];
+  const months = [
+    "Januari",
+    "Februari",
+    "Maret",
+    "April",
+    "Mei",
+    "Juni",
+    "Juli",
+    "Agustus",
+    "September",
+    "Oktober",
+    "November",
+    "December",
+  ];
 
   const date = new Date();
-  const dateToString = date.toLocaleDateString();
   const day = hari[date.getDay()];
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
 
-  return `${day} ${dateToString}`;
+  return `${day}, ${date.getDay()} ${month} ${year}`;
 }

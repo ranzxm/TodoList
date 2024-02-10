@@ -3,6 +3,7 @@ import Cookies from "js-cookie";
 import { getTodolist } from "../Service/Todolist";
 import { CookieChecker } from "../Service/CookieChecker";
 import { getDate } from "../Utils/GetDate";
+import { BadWordCensoring } from "../Service/BadWordCensoring";
 
 export const Presentational = () => {
   const [userCookie, setUserCookie] = useState<User>();
@@ -17,7 +18,7 @@ export const Presentational = () => {
 
       const newTodo: Todolist = {
         id: latestTodo.length + 1,
-        todo: newTextTodo,
+        todo: BadWordCensoring(newTextTodo),
         status: false,
         createdAt: getDate(),
       };
@@ -58,7 +59,7 @@ export const Presentational = () => {
           if (newTodo.trim() == "") {
             item.todo = item.todo;
           } else {
-            item.todo = newTodo;
+            item.todo = BadWordCensoring(newTodo);
           }
         }
       });
@@ -102,7 +103,7 @@ export const Presentational = () => {
     if (userCookie !== undefined) {
       const latestTodo: Todolist[] = userCookie.todolist;
       const newCookie: User = {
-        name: newName,
+        name: BadWordCensoring(newName),
         todolist: latestTodo,
       };
       Cookies.set("user", JSON.stringify(newCookie), { expires: 999 });
