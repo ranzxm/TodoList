@@ -22,5 +22,5 @@ export function getDate() {
   const month = months[date.getMonth()];
   const year = date.getFullYear();
 
-  return `${day}, ${date.getDay()} ${month} ${year}`;
+  return `${day}, ${date.getDate()} ${month} ${year}`;
 }
